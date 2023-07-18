@@ -16,7 +16,7 @@
 #site-header {
   width: 100%;
   min-height: 10%;
-  background-color: #131384;
+  background-color: #41b782;
 }
 .menu-items {
   margin-top: 0;
