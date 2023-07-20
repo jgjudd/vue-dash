@@ -5,9 +5,7 @@
 <template>
   <header id="site-header">
     <ul class="menu-items">
-      <li class="menu-item">One</li>
-      <li class="menu-item">Two</li>
-      <li class="menu-item">Three</li>
+      <li class="logo">Vue NHL Dashboard</li>
     </ul>
   </header>
 </template>
@@ -28,5 +26,11 @@
 .menu-item {
   color: whitesmoke;
   margin-right: 1rem;
+}
+.logo {
+  font-size: x-large;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-left: 1rem;
 }
 </style>
