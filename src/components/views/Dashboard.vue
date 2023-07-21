@@ -5,34 +5,22 @@
       {{ loading }}
     </div>
     <div v-else class="m-2">
-      
-      <h2>Eastern Conference</h2>
+
+      <h2 class="text-center text-xl mb-2">Eastern Conference</h2>
       <div class="grid gap-4 grid-cols-3 justify-stretch">
-        <Card v-for="team in easternConference">
-          <p>{{ team.name }}</p>
-          <p>{{ team.conference.name }} Conference ({{ team.division.name }} Division)</p>
-          <a :href="team.officialSiteUrl" target="_blank">{{ team.officialSiteUrl }}</a>
-          <p>Venue: {{ team.venue.name }}</p>
-          <p>First Year Of Play: {{ team.firstYearOfPlay }}</p>
-        </Card>
+        <TeamCard v-for="team in easternConference" :teamInfo="team"></TeamCard>
       </div>
 
-      <h2>Western Conference</h2>
+      <h2 class="text-center text-xl mb-2">Western Conference</h2>
       <div class="grid gap-4 grid-cols-3 justify-stretch">
-        <Card v-for="team in westernConference">
-          <p>{{ team.name }}</p>
-          <p>{{ team.conference.name }} Conference ({{ team.division.name }} Division)</p>
-          <a :href="team.officialSiteUrl" target="_blank">{{ team.officialSiteUrl }}</a>
-          <p>Venue: {{ team.venue.name }}</p>
-          <p>First Year Of Play: {{ team.firstYearOfPlay }}</p>
-        </Card>
+        <TeamCard v-for="team in westernConference" :teamInfo="team"></TeamCard>
       </div>
 
     </div>
 </template>
 
 <script setup lang="ts">
-import Card from '../atoms/Card.vue'
+import TeamCard from '../atoms/TeamCard.vue'
 import { getAllTeams } from '../../composables/useGetTeams'
 const { easternConference, westernConference, loading } = await getAllTeams()
 </script>
